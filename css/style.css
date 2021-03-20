@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+h1 {
+    margin: 0;
+}
+img {
+    width: 100%;
+}
+
+/* index3 tenemos la entrada de un blog*/
+
+/* contenedor-media es el padre */
+.contenedor-media {
+    margin: 0 auto;
+    max-width: 800px;
+    display: grid;
+
+    /* para un dispositivo movil */
+    /* el orden mostrar elementos lo da grid-template-areas */
+    /* aunque en el html este diferente. grid-template-areas tiene prioridad */
+    grid-template-areas: 
+    "titulo"
+    "slogan"
+    "info"
+    "imagen"
+    "entrada";   
+}
+
+@media screen and (min-width:768px) {
+    .contenedor-media {       
+        grid-template-areas: 
+        "titulo titulo"
+        "imagen slogan"
+        "imagen info"
+        "entrada entrada";   
+        grid-template-columns: repeat(2, 50%);
+    }
+
+}
+
+.titulo {
+    grid-area: titulo;  
+}
+
+.imagen {
+    grid-area: imagen;    
+}
+
+.slogan {
+    grid-area: slogan;
+}
+
+.info {
+    grid-area: info;
+}
+
+.entrada {
+    grid-area: entrada;
+}
